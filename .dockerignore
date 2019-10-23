@@ -1,0 +1,9 @@
+# dockerignore - modifies docker context to exclude files and directories
+# https://docs.docker.com/engine/reference/builder/#dockerignore-file
+
+.git
+.idea
+.gitignore
+.dockerignore
+venv
+__pycache__

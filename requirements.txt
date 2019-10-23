@@ -1,0 +1,3 @@
+Flask==1.1.1
+PyYAML==5.1.2
+py-ztj-registry==0.0.2
