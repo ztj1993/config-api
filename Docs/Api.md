@@ -21,8 +21,6 @@
 - 接口路径：/<cursor_id>/load/<data_type>
 - 返回数据：ok
 
-> 请求数据
-
 参数名|类型|必填|说明
 ---|---|---|---
 cursor_id|path|是|游标编号
@@ -32,8 +30,6 @@ data_type|path|是|数据类型，支持 json, yaml
 ### 设置数据
 - 接口路径：/<cursor_id>/set/<data_type>
 - 返回数据：ok
-
-> 请求数据
 
 参数名|类型|必填|说明
 ---|---|---|---
@@ -46,8 +42,6 @@ key|query|是|键
 - 接口路径：/<cursor_id>/append/<data_type>
 - 返回数据：ok
 
-> 请求数据
-
 参数名|类型|必填|说明
 ---|---|---|---
 cursor_id|path|是|游标编号
@@ -59,8 +53,6 @@ key|query|是|键
 - 接口路径：/<cursor_id>/unset
 - 返回数据：ok
 
-> 请求数据
-
 参数名|类型|必填|说明
 ---|---|---|---
 cursor_id|path|是|游标编号
@@ -69,8 +61,6 @@ key|query|是|键
 ### 获取数据
 - 接口路径：/<cursor_id>/set/<data_type>
 - 返回数据：根据 <data_type> 返回
-
-> 请求数据
 
 参数名|类型|必填|说明
 ---|---|---|---
@@ -81,8 +71,6 @@ key|query|是|键
 ### 输出数据
 - 接口路径：/<cursor_id>/set/<data_type>
 - 返回数据：根据 <data_type> 返回
-
-> 请求数据
 
 参数名|类型|必填|说明
 ---|---|---|---
