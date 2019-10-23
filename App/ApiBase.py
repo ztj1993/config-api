@@ -18,6 +18,11 @@ class ApiBase:
         threading.Thread(target=MemoryData.clear_listen, args=()).start()
 
     @staticmethod
+    @FlaskApp.route('/', methods=['GET', 'POST'])
+    def api_root():
+        return 'ok'
+
+    @staticmethod
     @FlaskApp.route('/init', methods=['GET', 'POST'])
     def cursor_init():
         """初始化游标"""
