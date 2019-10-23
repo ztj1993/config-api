@@ -27,20 +27,24 @@ docker run  -d --name config-api -p 5000:5000 ztj1993/config-api
 
 ## 使用示例
 ```
+$ #获取配置原始数据
 $ data=$(cat /etc/docker/daemon.json) && echo ${data}
 
     {
         "registry-mirrors": ["http://ef017c13.m.daocloud.io"]
     }
 
+$ #初始化配置游标
 $ cursor_id=$(curl -sf http://127.0.0.1:5000/init) && echo ${cursor_id}
 
     158853936809905161020585456234816085535
 
+$ #将配置上传到游标
 $ curl http://127.0.0.1:5000/${cursor_id}/load/json -d "${data}"
 
     ok
 
+$ #操作配置
 $ curl http://127.0.0.1:5000/${cursor_id}/set/bool?key=tlsverify -d "true"
 $ curl http://127.0.0.1:5000/${cursor_id}/set/str?key=tlscacert -d "/etc/certs/ca.pem"
 $ curl http://127.0.0.1:5000/${cursor_id}/set/str?key=tlscert -d "/etc/certs/server-cert.pem"
@@ -50,6 +54,7 @@ $ curl http://127.0.0.1:5000/${cursor_id}/append/str?key=hosts -d "unix:///var/r
 
     ok
 
+$ #输出配置
 $ curl http://127.0.0.1:5000/${cursor_id}/output/json
 
     {
