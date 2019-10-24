@@ -12,6 +12,7 @@ import registry
 import yaml
 
 from . import Excepts
+from . import Libs
 from .MemoryData import MemoryData
 
 json = json
@@ -23,5 +24,6 @@ registry = registry
 
 MemoryData = MemoryData()
 Excepts = Excepts
+Libs = Libs
 
 FlaskApp = flask.Flask('APP')

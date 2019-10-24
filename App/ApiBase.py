@@ -33,3 +33,21 @@ class ApiBase:
         MemoryData.set_cursor_expire(cursor_id, expire)
 
         return str(cursor_id)
+
+    @staticmethod
+    @FlaskApp.route('/env_to_ini', methods=['GET', 'POST'])
+    def env_to_ini():
+        """初始化游标"""
+        prefix = flask.request.values.get('prefix')
+        delimiter = str(flask.request.values.get('delimiter', '_'))
+        section_lower = bool(flask.request.values.get('section_lower', False))
+        key_lower = bool(flask.request.values.get('key_lower', False))
+        env_str = str(flask.request.get_data().decode())
+
+        return Libs.env_to_ini(
+            env_str,
+            prefix=prefix,
+            delimiter=delimiter,
+            section_lower=section_lower,
+            key_lower=key_lower
+        )
